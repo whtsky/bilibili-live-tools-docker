@@ -29,6 +29,7 @@ docker build -t bltc:mine .
 docker images
 ```
 如果构建成功会显示类似如下文字
+
 ![docker images](./img/docker-images.png)
 
 5、建立容器
@@ -41,4 +42,5 @@ docker run -itd --name blt bltc:mine
 docker logs -f blt
 ``` 
 显示类似如下信息则运行成功
+
 ![docker logs](./img/docker-logs.png)
