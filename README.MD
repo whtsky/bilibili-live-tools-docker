@@ -13,34 +13,6 @@ Docker version 18.04.0-ce
 ----
 ## 使用介绍
 
-1、下载一份源文件到本地
 ```
-git clone https://github.com/Muromi-Rikka/bilibili-live-tools-docker
+docker run -itd -e USER_NAME=B站登陆账户 -e USER_PASSWORD=登陆密码 --name 容器名字(随意) zsnmwy/bilibili-live-tools-docker
 ```
-2、把目录下文件 bilibili.conf 中的username和password填写
-
-3、进入目录构建容器
-```
-cd bilib*
-docker build -t bltc:mine .
-```
-4、查看镜像构建是否成功
-```
-docker images
-```
-如果构建成功会显示类似如下文字
-
-![docker images](./img/docker-images.png)
-
-5、建立容器
-```
-docker run -itd --name blt bltc:mine
-```
-
-6、查看容器运行状况
-```
-docker logs -f blt
-``` 
-显示类似如下信息则运行成功
-
-![docker logs](./img/docker-logs.png)
