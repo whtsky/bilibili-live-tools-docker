@@ -14,8 +14,10 @@ RUN apk add --no-cache --virtual bili git build-base python-dev py-pip jpeg-dev 
     rm -r /var/cache/apk && \
     rm -r /usr/share/man && \
     apk del bili && \
-    apk add --no-cache libjpeg-turbo
+    apk add --no-cache libjpeg-turbo git
 
-ENTRYPOINT sed -i ''"$(cat conf/bilibili.toml -n | grep "username =" | awk '{print $1}')"'c '"$(echo "username = \"${USER_NAME}\"")"'' conf/bilibili.toml && \
+ENTRYPOINT git pull && \
+            pip install --no-cache-dir -r requirements.txt && \
+            sed -i ''"$(cat conf/bilibili.toml -n | grep "username =" | awk '{print $1}')"'c '"$(echo "username = \"${USER_NAME}\"")"'' conf/bilibili.toml && \
             sed -i ''"$(cat conf/bilibili.toml -n | grep "password =" | awk '{print $1}')"'c '"$(echo "password = \"${USER_PASSWORD}\"")"'' conf/bilibili.toml && \
             python ./run.py

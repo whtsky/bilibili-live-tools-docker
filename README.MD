@@ -13,14 +13,14 @@ Docker version 18.04.0-ce
 ----
 ## 使用介绍
 
-- 直接拉取构建好的Docker镜像(不一定是最新的版本)
+- 直接拉取构建好的Docker镜像
 
 ```
 docker run -itd -e USER_NAME=B站登陆账户 -e USER_PASSWORD=登陆密码 --name 容器名字(随意) zsnmwy/bilibili-live-tools-docker
 ```
 https://github.com/zsnmwy/bilibili-live-tools-docker/blob/master/Dockerfile
 
-- 本地构建Docker镜像(自己构建最新的版本)
+- 本地构建Docker镜像
 
 * Linux/Macos
     1. 构建镜像 `curl https://raw.githubusercontent.com/zsnmwy/bilibili-live-tools-docker/master/Dockerfile | docker build - -t bilibili-live-tools-docker`
