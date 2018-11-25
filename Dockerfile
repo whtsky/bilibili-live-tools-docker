@@ -15,6 +15,4 @@ RUN apk add --no-cache libjpeg-turbo git build-base jpeg-dev zlib-dev freetype-d
 
 VOLUME ["/app/conf"]
 
-ENTRYPOINT git pull && \
-    pip install --no-cache-dir -r requirements.txt && \
-    python ./run.py
+ENTRYPOINT python ./run.py
